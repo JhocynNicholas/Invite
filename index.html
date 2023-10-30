@@ -1,35 +1,16 @@
-const scratchOff = document.querySelector('.scratch-off');
-let isScratching = false;
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scratch Off Effect</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="scratch-card">
+        <div class="scratch-off"></div>
+        <img src="wedding.jpg" class="base-image" alt="Base Image">
+        <img src="baby.jpg" class="revealed-image" alt="Revealed Image">
+    </div>
 
-scratchOff.addEventListener('mousedown', startScratching);
-scratchOff.addEventListener('touchstart', startScratching);
-
-function startScratching() {
-    isScratching = true;
-    scratchOff.style.mixBlendMode = 'multiply';
-}
-
-document.addEventListener('mouseup', stopScratching);
-document.addEventListener('touchend', stopScratching);
-
-function stopScratching() {
-    isScratching = false;
-    scratchOff.style.mixBlendMode = 'transparent';
-}
-
-scratchOff.addEventListener('mousemove', scratch);
-scratchOff.addEventListener('touchmove', scratch);
-
-function scratch(e) {
-    if (isScratching) {
-        const bounds = scratchOff.getBoundingClientRect();
-        const xPos = e.clientX - bounds.left;
-        const yPos = e.clientY - bounds.top;
-
-        scratchOff.style.background = 'transparent';
-        scratchOff.style.display = 'none';
-        setTimeout(() => {
-            scratchOff.style.display = 'block';
-        }, 0);
-    }
-}
+    <script src="script.js"></script>
+</body>
+</html>
