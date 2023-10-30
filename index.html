@@ -7,31 +7,38 @@
   <style type="text/css">
     body {
       background: #efefef;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 80vh; /* Adjust the height to fit your design */
     }
     .scratch-container {
-      width: 450px;
-      height: 800px;
-      border: solid 10px #FFFFFF;
-      margin: 0 auto;
+      width: 400px; /* Adjust the width to suit your needs */
+      height: 500px; /* Will create a 400x500 square container */
+      border: solid 5px #FFFFFF;
       position: relative;
     }
     .scratchpad {
       width: 100%;
       height: 100%;
-      background: url('images/wedding.jpg') no-repeat;
+      background: url('baby.jpg') no-repeat; /* Change to 'baby.jpg' for base image */
       background-size: cover;
+    }
+    .scratchpad img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Maintain aspect ratio and cover the container */
     }
     .promo-container {
       background: #FFF;
       border-radius: 5px;
-      width: 450px;
+      width: 400px;
       padding: 20px;
-      margin: 0 auto;
+      margin: 20px auto; /* Adjust for spacing */
       text-align: center;
       font-family: 'Open Sans', Arial, sans-serif;
       color: #333;
       font-size: 16px;
-      margin-top: 20px;
     }
     .btn {
       background: #56CFD2;
@@ -48,7 +55,7 @@
 </head>
 <body>
   <div class="scratch-container">
-    <div id="promo" class="scratchpad"></div>
+    <div id="promo" class="scratchpad"><img src="wedding.jpg" alt="Base Image"></div>
   </div>
   <div class="promo-container" style="display:none;">
     <div class="promo-code"></div>
@@ -61,8 +68,8 @@
   <script type="text/javascript">
     $('#promo').wScratchPad({
       size: 25, // the size of the eraser
-      bg: 'Baby.jpg', // revealed image (Baby.jpg)
-      fg: 'Wedding.jpg', // Base image (Wedding.jpg)
+      bg: 'Baby.jpg', // revealed image (baby.jpg)
+      fg: 'Wedding.jpg', // base image (wedding.jpg)
       realtime: true, // give real-time updates
       scratchMove: function (e, percent) {
         // Show the plain-text promo code and call-to-action when the scratch area is 50% scratched
@@ -76,4 +83,5 @@
   </script>
 </body>
 </html>
+
 
